@@ -14659,7 +14659,12 @@ RERERBtLWIuIiIhoYwlrEREREW3sf16gK7a+1DakAAAAAElFTkSuQmCC
 <p><strong>Answer: </strong></p>
 <p>k-fold cross-validation training technique is a procedure that can be used to estimate the best hyper-parameters for a given model without drastically reducing the number of samples by dividing data into training, validation and test sets. 
 In the basic form, training dataset is split into k smaller sets each of which is called k “folds”. A model is trained on k-1 of the folds as training data and tested on the remaining 1 part of the data. The performance score is then averaged over. 
-The benefit this technique provides over grid search is that sample size is not reduced because of splitting data into training and validation sets. It is particularly advantageous when the sample size is quite small.</p>
+The benefit this technique provides over grid search is that sample size is not reduced because of splitting data into training and validation sets. It is particularly advantageous when the sample size is quite small. Furthermore, if we do parameter tuning on one data split, we run into two problems:</p>
+<ol>
+<li>Not all of the data can be utilized for training purposes as some data will be test data that the model can never see for training purposes.</li>
+<li>How the data is split can impact the training of the model, particularly if the data is skewed or asymmterical in anyway.</li>
+</ol>
+<p>k-fold cross validation overcomes this by utilizing all of the data and ensuring that the model gets trained on every data-point.</p>
 
 </div>
 </div>
@@ -14966,11 +14971,11 @@ Range in prices: $73,357.39
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>The constructed model may not good enough to use in a real-world setting. This is because of a number of reasons:</p>
+<p>The constructed model may not be good enough to use in a real-world setting. This is because of a number of reasons:</p>
 <ol>
 <li>The house prices in 1978 were not the same as the house prices today.</li>
 <li>We have only used 3 features in the data. There are many other possible features that determine the price of a house such a traffic noise levels, level of crime, ranking of schools, etc.</li>
-<li>The model also does not seem robust enough since there is great variation in price ranges (over $\$$70,000) with different training and samples. A robust model should not give much variation </li>
+<li>The model also does not seem robust enough since there is great variation in price ranges (over $\$$70,000) with different training samples. A robust model should not give much variation </li>
 <li>Also, generalizing urban city data to rural city may not work because of differences in prices along with the features that define rural city.</li>
 </ol>
 
