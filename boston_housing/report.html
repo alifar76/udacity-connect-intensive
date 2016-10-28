@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11859,22 +11859,22 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Minimum price of the data</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
-<span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<span class="c1"># Maximum price of the data</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
-<span class="c1"># TODO: Mean price of the data</span>
+<span class="c1"># Mean price of the data</span>
 <span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
-<span class="c1"># TODO: Median price of the data</span>
+<span class="c1"># Median price of the data</span>
 <span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
-<span class="c1"># TODO: Standard deviation of prices of the data</span>
+<span class="c1"># Standard deviation of prices of the data</span>
 <span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
@@ -14581,8 +14581,8 @@ RERERBtLWIuIiIhoYwlrEREREW3sf16gK7a+1DakAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>Model trained with maximum depth of 1 has low variance but high bias. It has low variance because the shaded region region around curve does cover much area. The bias is high because the score metric has a low value (around 0.4) for both training and validation sets as indicated that the predicted values are quite off from the actual values.</p>
-<p>Model trained with maximum depth of 10 has high variance and relatively low bias. It has high variance because the shaded region region around curve covers a lot of area. The bias is relatively low because the score metric has a high value (around 1) for training set and around 0.7 for validation set.</p>
+<p>Model trained with maximum depth of 1 has low variance but high bias. It has low variance because the difference between traning score and validation score is very little (they are both close to 0.4). The bias is high because the score metric has a low value (around 0.4) for both training and validation sets, indicating that the predicted values are quite off from the actual values.</p>
+<p>Model trained with maximum depth of 10 has high variance and relatively low bias. It has high variance because the difference between training score and validation score is not minute. The difference is around 0.3 (1-0.7). The bias is relatively low because the score metric has a high value (around 1) for training set and around 0.7 for validation set.</p>
 
 </div>
 </div>
